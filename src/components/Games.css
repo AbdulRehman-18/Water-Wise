@@ -1,0 +1,281 @@
+.games-container {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(2, 12, 27, 0.98) 100%);
+  color: #fff;
+}
+
+.games-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.games-header h1 {
+  font-size: 2.5rem;
+  color: #00ffd5;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px rgba(0, 255, 213, 0.3);
+}
+
+.games-header p {
+  color: #8892b0;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.games-filters {
+  margin-top: 30px;
+}
+
+.difficulty-legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.game-card {
+  background: rgba(17, 34, 64, 0.6);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 213, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--difficulty-color);
+  opacity: 0.5;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 213, 0.1);
+}
+
+.game-card.new-game {
+  animation: glow 2s infinite;
+}
+
+.game-link {
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-content {
+  padding: 30px;
+}
+
+.game-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.game-info {
+  flex: 1;
+}
+
+.game-title {
+  color: #00ffd5;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.new-badge {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+.game-description {
+  color: #8892b0;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.difficulty {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.playtime {
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+.play-button {
+  background: linear-gradient(90deg, #00ffd5, #00d0ff);
+  color: #0a192f;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 213, 0.2);
+}
+
+.coming-soon {
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  margin-top: 20px;
+}
+
+/* Achievements Section */
+.games-footer {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+}
+
+.achievement-preview {
+  background: rgba(17, 34, 64, 0.6);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(0, 255, 213, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.achievement-preview h3 {
+  color: #00ffd5;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.achievement {
+  background: rgba(17, 34, 64, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8892b0;
+  font-size: 0.9rem;
+}
+
+.achievement.locked {
+  opacity: 0.7;
+}
+
+.achievement-icon {
+  font-size: 1.2rem;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 255, 213, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 213, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 255, 213, 0.2);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .games-container {
+    padding: 60px 15px;
+  }
+
+  .games-header h1 {
+    font-size: 2rem;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .game-icon {
+    font-size: 2.5rem;
+  }
+
+  .game-title {
+    font-size: 1.3rem;
+  }
+
+  .difficulty-legend {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}
